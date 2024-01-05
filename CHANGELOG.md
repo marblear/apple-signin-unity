@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.4.4] - 2024-01-05
+### Changed
+- Experimental support for visionOS
+
 ## [1.4.3] - 2023-09-30
 ### Changed
 - Updates `AddSignInWithAppleWithCompatibility` to support new public constructor for `PBXCapabilityType` introduced in Unity 2022.3.10
