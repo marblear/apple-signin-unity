@@ -45,7 +45,7 @@
 @end
 
 #if AUTHENTICATION_SERVICES_AVAILABLE
-API_AVAILABLE(visionos(1.0), ios(13.0), macos(10.15), tvos(13.0), watchos(6.0))
+API_AVAILABLE(xros(1.0), ios(13.0), macos(10.15), tvos(13.0), watchos(6.0))
 @interface AppleAuthManager () <ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding>
 @property (nonatomic, strong) ASAuthorizationAppleIDProvider *appleIdProvider;
 @property (nonatomic, strong) ASAuthorizationPasswordProvider *passwordProvider;
@@ -278,7 +278,7 @@ API_AVAILABLE(ios(13.0), macos(10.15), tvos(13.0), watchos(6.0))
 #pragma mark ASAuthorizationControllerDelegate protocol implementation
 
 - (void) authorizationController:(ASAuthorizationController *)controller didCompleteWithAuthorization:(ASAuthorization *)authorization
-API_AVAILABLE(visionOS(1.0), ios(13.0), macos(10.15), tvos(13.0), watchos(6.0))
+API_AVAILABLE(xros(1.0), ios(13.0), macos(10.15), tvos(13.0), watchos(6.0))
 {
     NSValue *authControllerAsKey = [NSValue valueWithNonretainedObject:controller];
     NSNumber *requestIdNumber = [[self authorizationsInProgress] objectForKey:authControllerAsKey];
@@ -306,7 +306,7 @@ API_AVAILABLE(visionOS(1.0), ios(13.0), macos(10.15), tvos(13.0), watchos(6.0))
 }
 
 - (void) authorizationController:(ASAuthorizationController *)controller didCompleteWithError:(NSError *)error
-API_AVAILABLE(visionOS(1.0), ios(13.0), macos(10.15), tvos(13.0), watchos(6.0))
+API_AVAILABLE(xros(1.0), ios(13.0), macos(10.15), tvos(13.0), watchos(6.0))
 {
     NSValue *authControllerAsKey = [NSValue valueWithNonretainedObject:controller];
     NSNumber *requestIdNumber = [[self authorizationsInProgress] objectForKey:authControllerAsKey];
@@ -326,7 +326,7 @@ API_AVAILABLE(visionOS(1.0), ios(13.0), macos(10.15), tvos(13.0), watchos(6.0))
 #pragma mark ASAuthorizationControllerPresentationContextProviding protocol implementation
 
 - (ASPresentationAnchor) presentationAnchorForAuthorizationController:(ASAuthorizationController *)controller
-API_AVAILABLE(visionOS(1.0), ios(13.0), macos(10.15), tvos(13.0), watchos(6.0))
+API_AVAILABLE(xros(1.0), ios(13.0), macos(10.15), tvos(13.0), watchos(6.0))
 {
     #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000 || __TV_OS_VERSION_MAX_ALLOWED >= 130000
         return [[[UIApplication sharedApplication] delegate] window];
